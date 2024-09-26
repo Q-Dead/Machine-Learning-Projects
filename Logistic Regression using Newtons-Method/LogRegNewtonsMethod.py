@@ -19,10 +19,10 @@ class NMLogisticRegression:
             Z = np.dot(X, self.weight) + self.intercept
             yhat = self.sigmoid(Z)
             
-            gradient = (1/n) *  np.dot(X.T, (yhat - y))
+            gradient = (1/i) *  np.dot(X.T, (yhat - y))
 
             diag = np.diag(yhat * (1 - yhat))
-            hessian  = (1/n) * np.dot(np.dot(X.T, diag), X)
+            hessian  = (1/i) * np.dot(np.dot(X.T, diag), X)
 
             self.weight = self.weight - np.dot(np.linalg.pinv(hessian), gradient)
 
